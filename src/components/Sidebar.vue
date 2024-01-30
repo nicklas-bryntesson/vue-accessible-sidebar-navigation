@@ -35,11 +35,12 @@ const sidebarLinks = computed(() => filterRoutes(router.options.routes));
         background-color: var(--color--N00);
         padding: 1rem;
         border-radius: 0.5rem;
+        margin-block-end: auto;
     }
 
     nav {
         display: flex;
-        flex-direction: column;
+        flex-direction: column;       
     }
 
 </style>
