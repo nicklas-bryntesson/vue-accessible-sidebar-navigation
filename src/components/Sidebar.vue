@@ -1,10 +1,9 @@
 <script setup>
 import { computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 import SidebarMenu from './SidebarMenu.vue';
 
 const router = useRouter();
-const route = useRoute();
 
 const filterRoutes = (routes, basePath = '') => {
     return routes
@@ -18,15 +17,11 @@ const filterRoutes = (routes, basePath = '') => {
 
 const sidebarLinks = computed(() => filterRoutes(router.options.routes));
 
-const isActiveRoute = (path) => {
-    const normalizePath = p => p.startsWith('/') ? p : '/' + p;
-    return normalizePath(route.path) === normalizePath(path);
-};
 </script>
 
 
 <template>
-    <aside role="complementary" class="sidebarNavigation">
+    <aside role="complementary">
         <nav role="navigation" aria-label="Main navigation">
             <SidebarMenu :links="sidebarLinks" />
         </nav>
@@ -35,7 +30,8 @@ const isActiveRoute = (path) => {
 
 
 <style scoped>
-    .sidebarNavigation {
+
+    aside {
         background-color: var(--color--N00);
         padding: 1rem;
         border-radius: 0.5rem;
@@ -45,4 +41,5 @@ const isActiveRoute = (path) => {
         display: flex;
         flex-direction: column;
     }
+
 </style>

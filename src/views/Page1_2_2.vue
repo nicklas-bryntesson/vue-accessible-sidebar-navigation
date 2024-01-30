@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <h1>{{ pageTitle }}</h1>
+  <main aria-labelledby="mainTitle">
+    <h1 id="mainTitle">{{ pageTitle }}</h1>
     <!-- Your page content goes here -->
   </main>
 </template>
@@ -14,3 +14,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  h1 {
+    color: var(--color--smokyBlack);
+}
+</style>
