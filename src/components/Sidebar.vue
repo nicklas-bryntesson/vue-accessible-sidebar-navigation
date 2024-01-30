@@ -16,9 +16,7 @@ const filterRoutes = (routes, basePath = '') => {
 };
 
 const sidebarLinks = computed(() => filterRoutes(router.options.routes));
-
 </script>
-
 
 <template>
     <aside role="complementary">

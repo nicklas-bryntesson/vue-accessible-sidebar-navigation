@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import ChevronDown from './icons/ChevronDown.vue';
 
 const props = defineProps({
+
     ariaExpanded: {
         type: Boolean,
         default: false
@@ -34,6 +35,7 @@ const ariaLabel = computed(() => props.ariaExpanded ? LABEL_COLLAPSE : LABEL_EXP
 
 <style scoped>
     button {
+        grid-area: button;
         background-color: transparent;
         border: none;
         padding: 0;
@@ -48,7 +50,11 @@ const ariaLabel = computed(() => props.ariaExpanded ? LABEL_COLLAPSE : LABEL_EXP
         color: inherit;
     }
 
-    button[aria-expanded="true"] svg {
+    button[aria-expanded="false"] svg {
         transform: rotate(180deg);
+    }
+
+    button[aria-expanded="true"] svg {
+        transform: rotate(0deg);
     }
 </style>
