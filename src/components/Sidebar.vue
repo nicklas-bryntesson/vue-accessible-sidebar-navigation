@@ -22,15 +22,13 @@ const sidebarLinks = computed(() => filterRoutes(router.options.routes));
 
 <template>
     <aside role="complementary">
-        <nav role="navigation" aria-label="Main navigation">
+        <nav role="navigation" aria-label="Sidebar navigation">
             <SidebarMenu :links="sidebarLinks" />
         </nav>
     </aside>
 </template>
 
-
 <style scoped>
-
     aside {
         background-color: var(--color--N00);
         padding: 1rem;
@@ -42,5 +40,4 @@ const sidebarLinks = computed(() => filterRoutes(router.options.routes));
         display: flex;
         flex-direction: column;       
     }
-
 </style>

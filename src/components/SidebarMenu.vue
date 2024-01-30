@@ -1,5 +1,4 @@
 <script setup>
-import { defineComponent } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 
 const props = defineProps({
@@ -27,7 +26,6 @@ const isActiveRoute = (path) => {
 </template>
 
 <style scoped>
-
     ul {
         list-style: none;
         padding-inline-start: 0.75rem;
@@ -44,5 +42,4 @@ const isActiveRoute = (path) => {
         font-weight: bold;
         color: blue;
     }
-
 </style>

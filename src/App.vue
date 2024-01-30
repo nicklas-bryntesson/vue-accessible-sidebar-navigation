@@ -20,20 +20,20 @@ import Footer from './components/Footer.vue'
 </template>
 
 <style scoped>
-.contentContainer {
-  grid-column: main;
-  display: grid;
-  grid-template-columns: var(--inlineGrid);
-  padding-block-end: 2rem;
+  .contentContainer {
+    grid-column: main;
+    display: grid;
+    grid-template-columns: var(--inlineGrid);
+    padding-block-end: 2rem;
 
-  & main {
-    grid-column: 1/8;
-    grid-row: 1;
-  }
+    & main {
+      grid-column: 1/8;
+      grid-row: 1;
+    }
 
-  & aside {
-    grid-column: 9/13;
-    grid-row: 1;
+    & aside {
+      grid-column: 9/13;
+      grid-row: 1;
+    }
   }
-}
 </style>
