@@ -24,6 +24,7 @@ import Footer from './components/Footer.vue'
   grid-column: main;
   display: grid;
   grid-template-columns: var(--inlineGrid);
+  padding-block-end: 2rem;
 
   & main {
     grid-column: 1/8;
