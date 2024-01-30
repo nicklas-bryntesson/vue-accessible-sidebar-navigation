@@ -1,0 +1,49 @@
+:root {
+  /* The outmost padding between content and screen/browser end */
+
+  /* Imutable for mobile, where we don't want it to grow ever */
+  --sitePadding--inmutable: 16px;
+
+  /* Fluid padding above 360px fluid 360-1920px */
+  --sitePadding--fluid: clamp(1rem, -0.269rem + 5.64vw, 6.5rem);
+
+  /* Negative site padding */
+  --sitePadding--inmutable--negative: -16px;
+  /* Negative Fluid padding above 360px fluid 360-1920px */
+  --sitePadding--inmutable--fluid: clamp(-1rem, -0.269rem + 5.64vw, 6.5rem);
+
+  /* Wrapper widths  */
+  --maxWidth--XXL: 106rem; /* 1696px */
+
+  /* Center content with fluid spaceing */
+  --centerGrid: [full-start] minmax(var(--sitePadding), 1fr) [main-start]
+    minmax(0, var(--maxWidth--XXL)) [main-end]minmax(var(--sitePadding), 1fr)
+    [full-end];
+
+  --inlineGridGap--mobile: 0;
+  --inlineGridGap--desktop: 2rem; /* 32px */
+
+  --inlineGrid--mobile: 1fr;
+  --inlineGrid--desktop: repeat(12, 1fr);
+}
+
+@media (min-width: 0) and (max-width: 47.98rem) {
+  :root {
+    --sitePadding: var(--sitePadding--inmutable);
+    --sitePadding-negative: var(--sitePadding--inmutable--negative);
+
+    --inlineGrid: var(--inlineGrid--mobile);
+    --inlineGridGap: var(--inlineGridGap--mobile);
+  }
+}
+
+/* Tablet, Laptop, Desktop */
+@media (min-width: 48rem) {
+  :root {
+    --sitePadding: var(--sitePadding--fluid);
+    --sitePadding-negative: var(--sitePadding--fluid--negative);
+
+    --inlineGrid: var(--inlineGrid--desktop);
+    --inlineGridGap: var(--inlineGridGap--desktop);
+  }
+}

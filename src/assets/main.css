@@ -1,0 +1,18 @@
+@import "./reset.css";
+@import "./props.css";
+@import "./base.css";
+
+@media (hover: hover) {
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: blueviolet;
+  }
+}
+
+body {
+}
+
+#app {
+  display: grid;
+  grid-template-columns: var(--centerGrid);
+}
