@@ -27,21 +27,35 @@ const isActiveRoute = (path) => {
 </script>
 
 <template>
-    <!-- Apply the ID to this ul -->
     <ul :id="props.id">
-        <li v-for="link in props.links" :key="link.path" class="menuItem"
-            :class="{ 'hasSubmenu': link.children && link.children.length }">
-            <RouterLink :to="link.path" :aria-current="isActiveRoute(link.path) ? 'page' : null">
+        <li 
+            v-for="link in props.links" 
+            :key="link.path" class="menuItem"
+            :class="{ 'hasSubmenu': link.children && link.children.length }"
+        >
+            <RouterLink 
+                :to="link.path" 
+                :aria-current="isActiveRoute(link.path) ? 'page' : null"
+            >
                 {{ link.meta.title }}
             </RouterLink>
-            <!-- Include DropdownToggle if the link has children -->
-            <DropdownToggle v-if="link.children && link.children.length" :aria-expanded="!!openSubmenus[link.path]"
-                :aria-controls="formatId(link.path)" @click="toggleSubmenu(link.path)" />
-            <!-- Submenu container -->
-            <div v-if="link.children && link.children.length" class="submenuContainer"
-                :class="{ 'isOpen': openSubmenus[link.path] }" :aria-hidden="!openSubmenus[link.path]">
-                <!-- Recursive SidebarMenu call for children links -->
-                <SidebarMenu :links="link.children" :id="formatId(link.path)" />
+            <DropdownToggle 
+                v-if="link.children && link.children.length" 
+                :aria-expanded="!!openSubmenus[link.path]"
+                :aria-controls="formatId(link.path)" 
+                @click="toggleSubmenu(link.path)" 
+            />
+            
+            <div 
+                v-if="link.children && link.children.length" 
+                class="submenuContainer"
+                :class="{ 'isOpen': openSubmenus[link.path] }" 
+                :aria-hidden="!openSubmenus[link.path]"
+            >
+                <SidebarMenu 
+                    :links="link.children" 
+                    :id="formatId(link.path)" 
+                />
             </div>
         </li>
     </ul>

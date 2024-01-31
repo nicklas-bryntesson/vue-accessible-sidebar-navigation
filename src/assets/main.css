@@ -15,4 +15,5 @@ body {
 #app {
   display: grid;
   grid-template-columns: var(--centerGrid);
+  grid-template-rows: auto 1fr auto;
 }
